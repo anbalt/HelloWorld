@@ -4,26 +4,27 @@ import java.util.Scanner;
 
 public class Task7 {
     public static void main(String[] args) {
-        System.out.println("Каков результат умножения первого числа на второе?");
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c;
-
         System.out.println("Введите первое число");
-        if (scanner.hasNextInt()) {
-            a = scanner.nextInt();
-            System.out.println("Введите второе число");
-            if (scanner.hasNextInt()) {
-                b = scanner.nextInt();
-                c = a * b;
-                System.out.println(c);
-            } else {
-                System.out.println("Ошибка");
-            }
+        int a = scanner.nextInt();
+        if (a < -9 || a > 9) {
+            System.out.println("Ошибка!");
+        }
+
+        System.out.println("Введите второе число");
+        int b = scanner.nextInt();
+        if (b < -9 || b > 9) {
+            System.out.println("Ошибка!");
+        }
+        
+        System.out.println("Каков результат умножения первого числа на второе?");
+
+        int c = scanner.nextInt();
+        if (c == a * b) {
+            System.out.println("Правильно.");
         } else {
-            System.out.println("Правильный результат");
+            System.out.println("Ошибка! Правильный результат:" + a * b);
         }
     }
 }
