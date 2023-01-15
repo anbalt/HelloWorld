@@ -2,17 +2,43 @@ package by.itacademy.hw4;
 
 public class Task4 {
     public static void main(String[] args) {
-        int numbers[] = new int[] {10, 3, 82, 15, 64, 43, 17, 90, 59};
-        int min = numbers[0];
-        int max = numbers[0];
+        System.out.println("Enter the array size:");
 
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] > max)
-                max = numbers[i];
-            else if (numbers[i] < min)
-                min = numbers[i];
+        Scanner scanner = new Scanner(System.in);
+
+        int size;
+        while((size = scanner.nextInt()) <= 0) {
+            System.out.println("Error! The array with the entered size can't exist! Enter a value > 0.");
         }
-        System.out.println("Max element: " + max);
-        System.out.println("Min element: " + min);
+
+        Random random = new Random();
+        int[] array = new int[size];
+
+        for(int i = 0; i < size; i++) {
+            array[i] = random.nextInt(50);
+            System.out.println(array[i]);
+        }
+
+        int max = array[0];
+        int maxIndex = 0;
+        for(int i = 0; i < size; i++) {
+            if(max < array[i]) {
+                max = array[i];
+                maxIndex = i;
+            }
+        }
+        System.out.println("The max element is " + max);
+        System.out.println("The index of the max element is " + maxIndex);
+
+        int min = array[0];
+        int minIndex = 0;
+        for(int i = 0; i < size; i++) {
+            if(max > array[i]) {
+                max = array[i];
+                maxIndex = i;
+            }
+        }
+        System.out.println("The min element is " + max);
+        System.out.println("The index of the min element is " + maxIndex);
     }
 }
