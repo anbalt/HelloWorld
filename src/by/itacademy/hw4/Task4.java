@@ -33,12 +33,12 @@ public class Task4 {
         int min = array[0];
         int minIndex = 0;
         for(int i = 0; i < size; i++) {
-            if(max > array[i]) {
-                max = array[i];
-                maxIndex = i;
+            if(min > array[i]) {
+                min = array[i];
+                minIndex = i;
             }
         }
-        System.out.println("The min element is " + max);
-        System.out.println("The index of the min element is " + maxIndex);
+        System.out.println("The min element is " + min);
+        System.out.println("The index of the min element is " + minIndex);
     }
 }
