@@ -8,10 +8,15 @@ public class Task3 {
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
-        int result = 1;
-        for (int i = 1; i <= n; i++) {
-            result *= i;
+        if (n <= 0) {
+            System.out.println("The factorial doesn't exist!");
         }
-        System.out.println(result);
+        else {
+            int result = 1;
+            for (int i = 1; i <= n; i++) {
+                result *= i;
+            }
+            System.out.println(result);
+        }
     }
 }
