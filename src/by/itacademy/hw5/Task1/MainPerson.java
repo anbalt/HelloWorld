@@ -6,11 +6,11 @@ public class MainPerson {
         Person person = new Person ("Annie", 23);
         Person undefinedPerson = new Person ();
 
-        System.out.println(person.getFullInfo());
-        System.out.println(undefinedPerson.getFullInfo());
+        person.move();
+        undefinedPerson.move();
 
-        Person.move("Annie");
-        Person.talk("Someone");
+        person.talk();
+        undefinedPerson.talk();
 
     }
 }
