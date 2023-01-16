@@ -3,38 +3,38 @@ package by.itacademy.hw5.Task2;
 import java.util.Arrays;
 
 public class Phone {
-    String number;
-    String model;
-    double weight;
+    private String number;
+    private String model;
+    private double weight;
 
-    Phone(String number, String model, double weight) {
+    public Phone(String number, String model, double weight) {
         this.number = number;
         this.model = model;
         this.weight = weight;
     }
 
-    Phone(String number, String model) {
+    public Phone(String number, String model) {
         this.number = number;
         this.model = model;
     }
 
-    Phone() {
+    public Phone() {
 
     }
 
-    static void receiveCall(String name) {
+    public void receiveCall(String name) {
         System.out.println("Calling " + name);
     }
 
-    static void receiveCall(String name, String number) {
+    public void receiveCall(String name, String number) {
         System.out.println("Calling " + name + " , " + number);
     }
 
-    String getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    static void sendMessage(String... numbers) {
+    public void sendMessage(String... numbers) {
         System.out.println(Arrays.toString(numbers));
     }
 }
