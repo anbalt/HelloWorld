@@ -1,25 +1,32 @@
 package by.itacademy.hw5.Task1;
 
 public class Person {
-    String fullName;
-    int age;
+    private String fullName;
+    private int age;
 
-    Person() {
+    public Person() {
 
     }
-
-    Person(String fullName, int age) {
+    public Person(String fullName, int age) {
         this.fullName = fullName;
         this.age = age;
     }
 
-    String getFullInfo() {
+    public String getFullInfo() {
         return fullName + "," + age;
     }
-    public static void move(String name) {
-        System.out.println(name + " moves");
+    public void move() {
+        if(this.fullName == null) {
+            System.out.println("The name is unknown!");
+        } else {
+            System.out.println(this.fullName + " moves");
+        }
     }
-    public static void talk(String name) {
-        System.out.println(name + " talks");
+    public void talk() {
+        if(this.fullName == null) {
+            System.out.println("The name is unknown!");
+        } else {
+            System.out.println(this.fullName + " talks");
+        }
     }
 }
