@@ -15,13 +15,13 @@ public class Task4 {
                 .append(a).append(" - ").append(b).append(" = ").append(a - b).append("\n")
                 .append(a).append(" * ").append(b).append(" = ").append(a * b).append("\n");
         return result;
+        
     }
-    public static StringBuilder modifyString(StringBuilder stringBuilder) {
+    public static void modifyString(StringBuilder stringBuilder) {
         int pos = stringBuilder.indexOf("=");
         while ((pos = stringBuilder.indexOf("=")) != -1) {
             stringBuilder.deleteCharAt(pos);
             stringBuilder.insert(pos, " equal ");
         }
-        return stringBuilder;
     }
 }
