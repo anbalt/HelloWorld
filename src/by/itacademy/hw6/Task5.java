@@ -5,20 +5,30 @@ import java.util.regex.Pattern;
 
 public class Task5 {
     public static void main(String[] args) {
+        public static void main(String[] args) {
         String text = ("Object-oriented programming is a programming language model "
                 + "organized around objects rather than \"actions\" and data rather than logic. "
                 + "Object-oriented programming blabla. Object-oriented programming bla.");
-        Pattern pattern = Pattern.compile("Object-oriented programming");
+
+        System.out.println(replace(text, "object-oriented programming"));
+    }
+
+    public static StringBuilder replace(String text, String regex) {
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
 
+        StringBuilder newString = new StringBuilder();
+
+        int count = 0;
+        int start = 0;
         while (matcher.find()) {
-            int start = matcher.start();
-            int end = matcher.end();
-            System.out.println("Match found " + text.substring(start, end) + " in the line");
+            if (++count % 2 == 0) {
+                int end = matcher.start();
+                newString.append(text, start, end).append("OOP");
+                start = matcher.end();
+            }
         }
-
-        text.replaceFirst("Object-oriented programming", "OOP");
-        System.out.println(text);
-
+        newString.append(text.substring(start));
+        return newString;
     }
 }
