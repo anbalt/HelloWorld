@@ -27,27 +27,16 @@ public class Pair <X, Y> {
         this.second = second;
     }
 
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pair<?, ?> pair = (Pair<?, ?>) o;
-        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
+    public void swapValue() {
+        Object first = first;
+        Object second = second;
+        first = (X) second;
+        second = (Y) first;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(first, second);
-    }
-
-    @Override
-    public String toString() {
-        return "Pair{" +
-                "first=" + first +
-                ", second=" + second +
-                '}';
+    public void printValues() {
+        System.out.println("First value: " + first);
+        System.out.println("Second value: " + second);
     }
 }
 
