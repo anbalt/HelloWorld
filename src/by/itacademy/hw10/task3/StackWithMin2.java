@@ -1,45 +1,25 @@
 package src.by.itacademy.hw10.task3;
 
-import java.util.Stack;
+import java.util.ArrayList;
 
-public class StackWithMin2 extends Stack<Integer> {
-    Stack<Integer> s2;
-
-    public StackWithMin2() {
-        s2 = new Stack<Integer>();
+public class StackWithMin<T extends Comparable<>> {
+    
+    private List<T> StackWithMin = new ArrayList<>();
+    
+    public void push(T newValue) {
+        stackWithMin.add(newValue);
+    }
+    
+    public void pop() {
+        T lastValue = stackWithMin.get(stackWithMin.size() - 1);
+        stackWithMin.remove(stackWithMin.size() - 1);
+        return lastValue;
     }
 
-    public static void main(String[] args) {
-        push();
-    }
-
-    private static void push() {
-        if (value <= min()) {
-            s2.push(value);
-        }
-        super.push(value);
-    }
-
-    public void push(int value) {
-        if (value <= min()) {
-            s2.push(value);
-        }
-        super.push(value);
-    }
-
-    public Integer pop() {
-        int value = super.pop();
-        if(value == min()) {
-            s2.pop();
-        }
-        return value;
-    }
-
-    public static int min() {
-        if (s2.isEmpty()) {
-            return Integer.MAX_VALUE;
-        } else {
-            return s2.peek();
-        }
+    @Override
+    public String toString() {
+        return "StackWithMin{" +
+                "StackWithMin=" + StackWithMin +
+                '}';
     }
 }
