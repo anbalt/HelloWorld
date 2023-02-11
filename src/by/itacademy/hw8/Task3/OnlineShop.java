@@ -10,6 +10,12 @@ public class OnlineShop {
     private Shoes[] shoes;
     private Clothes[] clothesArray;
 
+    public OnlineShop(Clothes[] clothes, Shoes[] shoes, Clothes[] clothesArray) {
+       this.clothes = clothes;
+       this.shoes = shoes;
+       this.clothesArray = clothesArray;
+    }
+    
     public  Clothes[] getClothes() {
         int count = 0;
         for(Clothes c : clothes) {
