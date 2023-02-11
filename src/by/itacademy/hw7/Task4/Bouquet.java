@@ -6,9 +6,11 @@ public class Bouquet implements myBouquet {
     public Bouquet(int count) {
         flowers = new Flower[count];
     }
+   
     public Flower[] getFlowers() {
         return this.flowers;
     }
+    
     @Override
     public void addFlower(Flower flower) {
         if(FlowersPosition.getLength(this.flowers)) {
@@ -19,6 +21,7 @@ public class Bouquet implements myBouquet {
         }
 
     }
+    
     @Override
     public int getBouquetPrice() {
         double result = 0;
