@@ -17,7 +17,7 @@ public class Main {
         Printer.printPrice(bouquet.getBouquetPrice());
 
         int shelfLife;
-        for (shelfLife = 7; shelfLife <= 7; shelfLife--) {
+        for (shelfLife = 3; shelfLife <= 3; shelfLife--) {
                 if (shelfLife == 0)
                     break;
                 else
