@@ -10,6 +10,7 @@ public class Printer {
         }
         System.out.println(stringBuilder.toString());
     }
+    
     public static void printPrice(double price) {
         System.out.println("The price of the bouquet is: " + price + " $");
     }
