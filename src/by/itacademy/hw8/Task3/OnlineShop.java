@@ -29,22 +29,7 @@ public class OnlineShop {
         }
         return clothesArray;
     }
-
-    public void initClothes() {
-        clothes = new Clothes[3];
-
-        Clothes dress = new Clothes(1, "Dress",
-                54.5, "blue", 5, new ClothesSizes[]{ClothesSizes.M});
-        Clothes skirt = new Clothes(2, "Skirt",
-                20.9, "red", 7, new ClothesSizes[]{ClothesSizes.S});
-        Clothes shirt = new Clothes(3, "Shirt",
-                35.5, "white", 15, new ClothesSizes[]{ClothesSizes.L});
-
-        clothes[0] = dress;
-        clothes[1] = skirt;
-        clothes[2] = shirt;
-    }
-
+    
     public Shoes[] getShoes() {
         int count = 0;
         for(Shoes c : shoes) {
@@ -58,20 +43,6 @@ public class OnlineShop {
         }
         return shoesArray;
     }
-    public void initShoes() {
-        shoes = new Shoes[3];
-
-        Shoes boots = new Shoes(4, "Boots",
-                30.1, "black", 8, new ShoesSize[] {ShoesSize.THIRTY_NINE});
-        Shoes highHeel = new Shoes(5, "HighHeel",
-                28.7, "pink", 9, new ShoesSize[]{ShoesSize.THIRTY_SEVEN});
-        Shoes sneakers = new Shoes(6, "Sneakers",
-                32.6, "yellow", 17, new ShoesSize[]{ShoesSize.FOURTY});
-
-        shoes[0] = boots;
-        shoes[1] = highHeel;
-        shoes[2] = sneakers;
-    }
 
     public void buyClothesByColor(String color) {
         for (Clothes item : clothes) {
@@ -83,7 +54,7 @@ public class OnlineShop {
 
     public void buyClothesBySize(ClothesSizes[] clothesSizes) {
         for (Clothes item : clothes) {
-            if(item.getColor().equals(clothesSizes)) {
+            if(item.getClothezSize().equals(clothesSizes)) {
                 item.buy();
             }
         }
@@ -99,9 +70,39 @@ public class OnlineShop {
 
     public void buyShoesBySize(ShoesSize[] shoesSizes) {
         for (Shoes item : shoes) {
-            if(item.getColor().equals(shoesSizes)) {
+            if(item.getShoesSize().equals(shoesSizes)) {
                 item.buy();
             }
         }
+    }
+    
+    private void initClothes() {
+        clothes = new Clothes[3];
+
+        Clothes dress = new Clothes(1, "Dress",
+                54.5, "blue", 5, new ClothesSizes[]{ClothesSizes.M});
+        Clothes skirt = new Clothes(2, "Skirt",
+                20.9, "red", 7, new ClothesSizes[]{ClothesSizes.S});
+        Clothes shirt = new Clothes(3, "Shirt",
+                35.5, "white", 15, new ClothesSizes[]{ClothesSizes.L});
+
+        clothes[0] = dress;
+        clothes[1] = skirt;
+        clothes[2] = shirt;
+    }
+
+    private void initShoes() {
+        shoes = new Shoes[3];
+
+        Shoes boots = new Shoes(4, "Boots",
+                30.1, "black", 8, new ShoesSize[] {ShoesSize.THIRTY_NINE});
+        Shoes highHeel = new Shoes(5, "HighHeel",
+                28.7, "pink", 9, new ShoesSize[]{ShoesSize.THIRTY_SEVEN});
+        Shoes sneakers = new Shoes(6, "Sneakers",
+                32.6, "yellow", 17, new ShoesSize[]{ShoesSize.FOURTY});
+
+        shoes[0] = boots;
+        shoes[1] = highHeel;
+        shoes[2] = sneakers;
     }
 }
