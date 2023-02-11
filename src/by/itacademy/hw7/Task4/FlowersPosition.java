@@ -8,6 +8,7 @@ public class FlowersPosition {
         }
         return check;
     }
+   
     public static int getPosition(Flower[] flowers) {
         int position = 0;
 
