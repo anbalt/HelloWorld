@@ -1,10 +1,10 @@
 package src.by.itacademy.hw7.Task1;
 
 public class Student {
-    String firstName;
-    String lastName;
-    String group;
-    double averageMark;
+    private String firstName;
+    private String lastName;
+    private String group;
+    private double averageMark;
 
     public Student(String firstName, String lastName, String group, double averageMark) {
         this.firstName = firstName;
